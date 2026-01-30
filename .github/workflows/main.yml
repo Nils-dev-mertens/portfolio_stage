@@ -32,5 +32,5 @@ jobs:
           docker build -t portfolio_stage .
           docker stop portfolio_stage || true
           docker rm portfolio_stage || true
-          docker run -d --name portfolio_stage -p 4267:80 portfolio_stage:latest
+          docker run -d --name portfolio_stage -p 4267:4267 portfolio_stage:latest
           "
