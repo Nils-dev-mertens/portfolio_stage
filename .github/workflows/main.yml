@@ -27,10 +27,10 @@ jobs:
       - name: Deploy
         run: |
           sshpass -p "${{ secrets.SERVER_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.TS_USER }}@${{ secrets.TS_HOST }} "
-          cd /home/${{ secrets.TS_USER }}/cybertestgitbook/testingAndSecurityCursus/
+          cd /home/${{ secrets.TS_USER }}/portfolio_stage/
           git pull
-          docker build -t cybertestgitbook .
-          docker stop cybertestgitbook || true
-          docker rm cybertestgitbook || true
-          docker run -d --name cybertestgitbook -p 5100:80 cybertestgitbook:latest
+          docker build -t portfolio_stage .
+          docker stop portfolio_stage || true
+          docker rm portfolio_stage || true
+          docker run -d --name portfolio_stage -p 4267:80 portfolio_stage:latest
           "
