@@ -1,26 +1,26 @@
-FROM node:20-bookworm AS builder
+# ---------------------------
+# Build stage (Bun)
+# ---------------------------
+FROM oven/bun:1.1 AS builder
 
 WORKDIR /app
 
-# Copy project files
+# Copy Astro project
 COPY astro-app/ .
 
-# Install dependencies
-RUN npm install
+# Install dependencies with Bun
+RUN bun install
 
-# Build the production-ready app
-RUN npm run build
+# Build Astro (outputs to /app/dist)
+RUN bun run build
 
 # ---------------------------
-# Use a lightweight web server to serve the build
+# Runtime stage (Nginx)
 # ---------------------------
 FROM nginx:alpine
 
-# Copy built files from the previous stage
+# Copy built Astro files to Nginx web root
 COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Optional: Copy custom Nginx config if needed
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose HTTP port
 EXPOSE 80
