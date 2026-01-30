@@ -1,33 +1,46 @@
 ---
+import "../styles/global.css";
+import { Button } from "../components/ui/button";
 import MainLayout from "../layouts/main.astro";
+import { Badge } from "../components/ui/badge";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../components/ui/card";
 const posts = await Astro.glob('./blog/posts/*.md');
 ---
 
 <MainLayout title="Blog">
-    <div class="container mx-auto px-4 py-8">
-        <div class="mb-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Blog</CardTitle>
-              <CardDescription>{posts.length} bericht(en)</CardDescription>
-            </CardHeader>
-            <CardContent>
-              Hieronder vind je al mijn wekelijkse updates.
-            </CardContent>
-          </Card>
+    <section class="py-8 sm:py-16">
+        <h1 class="text-7xl sm:text-8xl font-bold text-accent mb-4">Blog</h1>
+        <h2 class="text-2xl sm:text-4xl text-muted-foreground mb-6">Hieronder vind je al mijn wekelijkse updates</h2>
+        <div class="flex items-center gap-4">
+            <p class="text-muted-foreground mb-4">{posts.length} bericht(en)</p>
         </div>
+    </section>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {posts.map((p) => (
-            <Card key={p.url} className="hover:shadow-md">
-              <CardHeader>
-                <CardTitle><a href={p.url} class="hover:underline">{p.frontmatter.title}</a></CardTitle>
-                <CardDescription>{p.frontmatter.date}</CardDescription>
-              </CardHeader>
-              <CardContent>{p.frontmatter.summary}</CardContent>
-            </Card>
-          ))}
+    <div id="maincontent-blog" class="mt-8">
+        <div class="section container">
+            <div class="section mb-6">
+                <h3 class="text-accent text-3xl mb-4">Recente berichten</h3>
+                <div class="">
+                    {posts.map((p) => (
+                        <Card key={p.url} className="mb-4 hover:shadow-md">
+                            <CardHeader>
+                                <CardTitle className="text-accent">
+                                    <a href={p.url} class="hover:underline">
+                                        {p.frontmatter.title}
+                                    </a>
+                                </CardTitle>
+                                <CardDescription>
+                                    {p.frontmatter.date}
+                                </CardDescription>
+                                <div class="flex gap-1">
+                                    {p.frontmatter.tags.map((e:any) => <Badge variant="secondary">{e}</Badge>)}
+                                </div>
+                            </CardHeader>
+                            <CardContent>{p.frontmatter.summary}</CardContent>
+                        </Card>
+                    ))}
+                </div>
+            </div>
         </div>
     </div>
 </MainLayout>
