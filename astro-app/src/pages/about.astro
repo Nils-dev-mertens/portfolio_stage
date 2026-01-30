@@ -1,0 +1,37 @@
+---
+import MainLayout from "../layouts/main.astro";
+import { Card } from "../components/ui/card";
+---
+
+<MainLayout title="About Nils Mertens">
+    <nav class="bg-gray-800 p-3">
+        <a href="/" class="text-white px-2">Home</a>
+        <a href="/about" class="text-white px-2">About</a>
+        <a href="/blog" class="text-white px-2">Blog</a>
+    </nav>
+    <div class="container mx-auto px-4 py-8">
+        <Card class="p-6">
+            <h2 class="text-3xl font-bold mb-4">Nils Mertens</h2>
+            <p>Hallo! Ik ben Nils, een gemotiveerde programmeur met ervaring in fullstack webontwikkeling. Ik werk graag aan zowel persoonlijke als professionele projecten en heb ook interesse in systeembeheer en netwerken. In mijn vrije tijd onderhoud ik een home server en werk ik aan open source projecten. Daarnaast ben ik fanatiek gamer en techliefhebber.</p>
+            <h3 class="text-2xl font-semibold mt-6">Werkervaring</h3>
+            <ul class="list-disc ml-6">
+                <li>ZORGI (test automation engineer) - juni 2025 / november 2025</li>
+                <li>WEXSO BV (consultant - media/web) — juni 2024 / mei 2025</li>
+                <li>Administration.be (media/web) — februari 2024</li>
+            </ul>
+            <h3 class="text-2xl font-semibold mt-6">Opleiding</h3>
+            <ul class="list-disc ml-6">
+                <li>Graduaat Programmeren – AP Hogeschool, Antwerpen</li>
+                <li>Opleiding Multimedia – Cadix, Noorderlaan, Antwerpen</li>
+            </ul>
+            <h3 class="text-2xl font-semibold mt-6">Persoonlijke Vaardigheden</h3>
+            <p>Nauwkeurigheid, stiptheid, gestructureerd werken, opdrachten correct uitvoeren</p>
+            <h3 class="text-2xl font-semibold mt-6">Vrije Tijd & Interesses</h3>
+            <p>Werken aan persoonlijke projecten, gaming (R6 Siege, DOOM Eternal), events bezoeken, Zelfstudie in systeembeheer & netwerken (eigen mediaserver/NAS)</p>
+            <h3 class="text-2xl font-semibold mt-6">Contact</h3>
+            <p>📫 Email: nilsdevmertens@gmail.com</p>
+            <p>📞 Telefoon: 0468 12 76 93</p>
+            <p>💻 GitHub: <a href="https://github.com/Nils-Dev-Mertens" class="text-blue-500">Nils-Dev-Mertens</a></p>
+    </Card>
+</div>
+</MainLayout>

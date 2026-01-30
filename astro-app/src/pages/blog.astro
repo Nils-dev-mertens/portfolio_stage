@@ -1,0 +1,33 @@
+---
+import MainLayout from "../layouts/main.astro";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../components/ui/card";
+const posts = await Astro.glob('./blog/posts/*.md');
+---
+
+<MainLayout title="Blog">
+    <div class="container mx-auto px-4 py-8">
+        <div class="mb-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Blog</CardTitle>
+              <CardDescription>{posts.length} bericht(en)</CardDescription>
+            </CardHeader>
+            <CardContent>
+              Hieronder vind je al mijn wekelijkse updates.
+            </CardContent>
+          </Card>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {posts.map((p) => (
+            <Card key={p.url} className="hover:shadow-md">
+              <CardHeader>
+                <CardTitle><a href={p.url} class="hover:underline">{p.frontmatter.title}</a></CardTitle>
+                <CardDescription>{p.frontmatter.date}</CardDescription>
+              </CardHeader>
+              <CardContent>{p.frontmatter.summary}</CardContent>
+            </Card>
+          ))}
+        </div>
+    </div>
+</MainLayout>

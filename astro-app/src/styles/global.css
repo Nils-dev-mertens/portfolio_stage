@@ -42,19 +42,19 @@
 }
 
 :root{
-  --background: oklch(0 0 0);
+  --background: hsl(20, 14%, 4%);
   --foreground: oklch(0.9219 0 0);
   --card: oklch(0.2050 0 0);
   --card-foreground: oklch(0.9219 0 0);
   --popover: oklch(0.2050 0 0);
   --popover-foreground: oklch(0.9219 0 0);
   --primary: oklch(0.8555 0.2655 138.5816);
-  --primary-foreground: oklch(0 0 0);
+  --primary-foreground: hsl(20, 14%, 4%);
   --secondary: oklch(0.2686 0 0);
   --secondary-foreground: oklch(0.9219 0 0);
   --muted: oklch(0.2393 0 0);
   --muted-foreground: oklch(0.7155 0 0);
-  --accent: oklch(0.6015 0.1576 130.0660);
+  --accent: oklch(78.125% 0.21083 130.964);
   --accent-foreground: oklch(0.9104 0.1738 139.5475);
   --destructive: oklch(0.5770 0.2450 27.3250);
   --destructive-foreground: oklch(1.0000 0 0);
@@ -63,18 +63,18 @@
   --ring: oklch(0.8555 0.2655 138.5816);
   --chart-1: oklch(0.8705 0.2672 139.4654);
   --chart-2: oklch(0.7870 0.2350 136.4912);
-  --chart-3: oklch(0.6015 0.1576 130.0660);
+  --chart-3: oklch(78.125% 0.21083 130.964);
   --chart-4: oklch(0.6942 0.1932 132.8512);
-  --chart-5: oklch(0.6015 0.1576 130.0660);
+  --chart-5: oklch(78.125% 0.21083 130.964);
   --sidebar: oklch(0.1684 0 0);
   --sidebar-foreground: oklch(0.9219 0 0);
   --sidebar-primary: oklch(0.8555 0.2655 138.5816);
   --sidebar-primary-foreground: oklch(1.0000 0 0);
-  --sidebar-accent: oklch(0.6015 0.1576 130.0660);
+  --sidebar-accent: oklch(78.125% 0.21083 130.964);
   --sidebar-accent-foreground: oklch(0.9104 0.1738 139.5475);
   --sidebar-border: oklch(0.3715 0 0);
   --sidebar-ring: oklch(0.8555 0.2655 138.5816);
-  --font-sans: Anek Telugu, ui-sans-serif, sans-serif, system-ui;
+  --font-sans: "Anek Latin", ui-sans-serif, sans-serif, system-ui;
   --font-serif: Source Serif 4, serif;
   --font-mono: JetBrains Mono, monospace;
   --radius: 0.375rem;
@@ -102,13 +102,13 @@
   --popover: oklch(1.0000 0 0);
   --popover-foreground: oklch(0.2686 0 0);
   --primary: oklch(0.8555 0.2655 138.5816);
-  --primary-foreground: oklch(0 0 0);
+  --primary-foreground: hsl(20, 14%, 4%);
   --secondary: oklch(0.9665 0.0045 314.8046);
   --secondary-foreground: oklch(0.4362 0.0425 310.9389);
   --muted: oklch(0.9834 0.0028 308.4288);
   --muted-foreground: oklch(0.5482 0.0362 314.5072);
   --accent: oklch(0.9828 0.0312 139.4364);
-  --accent-foreground: oklch(0.6015 0.1576 130.0660);
+  --accent-foreground: oklch(78.125% 0.21083 130.964);
   --destructive: oklch(0.9237 0.1811 109.4770);
   --destructive-foreground: oklch(1.0000 0 0);
   --border: oklch(0.9267 0.0091 314.7793);
@@ -117,14 +117,14 @@
   --chart-1: oklch(0.8555 0.2655 138.5816);
   --chart-2: oklch(0.7870 0.2350 136.4912);
   --chart-3: oklch(0.6942 0.1932 132.8512);
-  --chart-4: oklch(0.6015 0.1576 130.0660);
+  --chart-4: oklch(78.125% 0.21083 130.964);
   --chart-5: oklch(0.5247 0.1327 128.8675);
   --sidebar: oklch(0.9834 0.0028 308.4288);
   --sidebar-foreground: oklch(0.2686 0 0);
   --sidebar-primary: oklch(0.8555 0.2655 138.5816);
   --sidebar-primary-foreground: oklch(1.0000 0 0);
   --sidebar-accent: oklch(0.9828 0.0312 139.4364);
-  --sidebar-accent-foreground: oklch(0.6015 0.1576 130.0660);
+  --sidebar-accent-foreground: oklch(78.125% 0.21083 130.964);
   --sidebar-border: oklch(0.9267 0.0091 314.7793);
   --sidebar-ring: oklch(0.8555 0.2655 138.5816);
   --font-sans: Anek Telugu, ui-sans-serif, sans-serif, system-ui;
@@ -203,10 +203,19 @@
 }
 
 body {
+  font : var(--font-sans)!important;
   background-color: var(--background)!important;
   color: #ffffff;
 }
 
 button{
   cursor: pointer;
+}
+
+.card{
+  cursor: pointer;
+}
+
+.card:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

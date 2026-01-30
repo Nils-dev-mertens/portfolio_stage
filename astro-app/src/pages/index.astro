@@ -1,15 +1,125 @@
 ---
-
-import '../styles/global.css';// Component Imports
+import "../styles/global.css"; // Component Imports
 import { Button } from "../components/ui/button";
 import MainLayout from "../layouts/main.astro";
+import {
+    Card,
+    CardHeader,
+    CardTitle,
+    CardDescription,
+    CardContent,
+} from "../components/ui/card";
+import { Badge } from "../components/ui/badge";
+
+const posts = await Astro.glob("./blog/posts/*.md");
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
 
 <MainLayout title="Home">
-    <div>
-        <h1>Welkom</h1>
-    </div>
-</MainLayout>
+    <section class="py-12 sm:py-20 mb-8">
+        <h1 class="text-7xl sm:text-8xl font-bold text-accent mb-4">Welkom!</h1>
+        <h2 class="text-2xl sm:text-4xl text-muted-foreground mb-6">op mijn stage blog</h2>
+        <div class="flex items-center gap-4">
+            <a href="/blog"><Button>Lees de blog</Button></a>
+            <a href="/about" class="text-muted-foreground hover:underline">Meer over mij</a>
+        </div>
+    </section>
+
+    <div id="maincontent-home" class="mt-8">
+        <div class="section container">
+            <div class="section mb-6">
+                <h3 class="text-accent-foreground text-3xl mb-2">Wat?</h3>
+                <p>
+                    Op deze website deel ik mijn stage-ervaring bij <span
+                        class="font-bold">Saply</span
+                    >, waar ik aan de slag ben als <span class="font-bold"
+                        >Junior Software Engineer</span
+                    >. In deze blog toon ik wat ik week na week leer en waaraan
+                    ik werk tijdens mijn stage. De inhoud is bedoeld voor
+                    docenten, medestudenten en andere geïnteresseerden die
+                    willen volgen hoe mijn stage verloopt en welke technologieën
+                    ik in de praktijk gebruik.
+                </p>
+            </div>
+            <div class="section mb-6">
+                <h3 class="text-accent-foreground text-3xl mb-2">Hoe?</h3>
+                <p class="">
+                    Mijn stage vindt plaats in een <span class="font-bold"
+                        >startup-omgeving</span
+                    >, wat zorgt voor veel afwisseling en uiteenlopende taken.
+                    Ik werk zowel <span class="font-bold"
+                        >backend als frontend</span
+                    >, afhankelijk van wat er op dat moment nodig is binnen het
+                    team. De technologieën waarmee ik werk zijn onder andere:
+                </p>
+                <ul class="tech-stack-list">
+                    <li>
+                        <span class="font-bold">Backend:</span> Java (Spring Boot)
+                        en Python
+                    </li>
+                    <li>
+                        <span class="font-bold">Frontend:</span> React (WordPress-plugin)
+                    </li>
+                    <li>
+                        <span class="font-bold">Web:</span> HTML, CSS en JavaScript
+                    </li>
+                </ul>
+                <p>
+                    Elke blogpost is een <span class="font-bold"
+                        >weekupdate</span
+                    > waarin ik beschrijf:
+                </p>
+
+                <ul class="week-activities">
+                    <li>wat ik die week heb gedaan</li>
+                    <li>welke tools en talen ik heb gebruikt</li>
+                    <li>wat ik heb bijgeleerd of tegenkwam</li>
+                </ul>
+            </div>
+            <div class="section mb-6">
+                <h3 class="text-accent-foreground text-3xl mb-2">Wanneer?</h3>
+                <p class="">
+                    Deze stage loopt over <span class="font-bold"
+                        >72 werkdagen</span
+                    > en maakt deel uit van mijn <span class="font-bold"
+                        >laatste jaar Graduaat Programmeren</span
+                    >. De blog wordt <span class="font-bold"
+                        >wekelijks bijgewerkt</span
+                    >, zodat de voortgang goed te volgen is. Via deze
+                    landingspagina kan je de afzonderlijke blogposts bekijken.
+                    De meest recente posts geven het beste beeld van mijn
+                    huidige taken en leerproces.
+                </p>
+            </div>
+        </div>
+
+        <div class="section container mt-8">
+            <h3 class="text-accent-foreground text-3xl mb-4">
+                Recente berichten
+            </h3>
+
+            <div class="">
+                {
+                    posts.slice(0, 3).map((p) => (
+                        <Card key={p.url} className="mb-4">
+                            <CardHeader>
+                                <CardTitle className="text-accent">
+                                    <a href={p.url} class="hover:underline">
+                                        {p.frontmatter.title}
+                                    </a>
+                                </CardTitle>
+                                <CardDescription>
+                                    {p.frontmatter.date}
+                                </CardDescription>
+                                <div class="flex gap-1">{p.frontmatter.tags.map((e:any) => <Badge variant="secondary">{e}</Badge>)}</div>
+                            </CardHeader>
+                            <CardContent>{p.frontmatter.summary}</CardContent>
+                        </Card>
+                    ))
+                }
+            </div>
+        </div>
+    </div></MainLayout
+>

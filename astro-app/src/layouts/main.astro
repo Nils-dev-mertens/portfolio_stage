@@ -1,17 +1,28 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
+import Navbar from "../components/ui/Navbar.astro";
 const { title } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<title>{title}</title>
-	</head>
-	<body class="h-full bg-background text-foreground" style="height:100vh;">
-		<slot />
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&display=swap"
+            rel="stylesheet"
+        />
+        <title>{title}</title>
+    </head>
+    <body class="font-sans">
+        <Navbar />
+		<main class="max-w-5xl mx-auto px-6 sm:px-8 py-10">
+        	<slot />
+		</main>
+    </body>
 </html>
