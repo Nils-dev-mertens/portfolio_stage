@@ -32,10 +32,10 @@ export default function MobileMenu() {
             <a href="/" className="py-2" style={{ color: "var(--color-foreground)" }}>
               <Button variant="link" className="text-2xl">Home</Button>
             </a>
-            <a href="/about" className="py-2" style={{ color: "var(--color-foreground)" }}>
+            <a href="/about/" className="py-2" style={{ color: "var(--color-foreground)" }}>
               <Button variant="link" className="text-2xl">About</Button>
             </a>
-            <a href="/blog" className="py-2" style={{ color: "var(--color-foreground)" }}>
+            <a href="/blog/" className="py-2" style={{ color: "var(--color-foreground)" }}>
               <Button variant="link" className="text-2xl">Blog</Button>
             </a>
           </div>
