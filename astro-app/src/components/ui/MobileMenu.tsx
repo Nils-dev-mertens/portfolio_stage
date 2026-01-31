@@ -24,25 +24,25 @@ export default function MobileMenu() {
 
         <SheetContent side="right">
           <SheetHeader>
-            <SheetTitle>Menu</SheetTitle>
+            <SheetTitle className="text-xl">Menu</SheetTitle>
             <SheetDescription>Snelle navigatie naar de belangrijkste pagina's</SheetDescription>
           </SheetHeader>
 
           <div className="grid gap-2">
-            <a href="/" className="px-3 py-2 rounded" style={{ color: "var(--color-foreground)" }}>
-              <Button variant="link">Home</Button>
+            <a href="/" className="py-2" style={{ color: "var(--color-foreground)" }}>
+              <Button variant="link" className="text-2xl">Home</Button>
             </a>
-            <a href="/about" className="px-3 py-2 rounded" style={{ color: "var(--color-foreground)" }}>
-              <Button variant="link">About</Button>
+            <a href="/about" className="py-2" style={{ color: "var(--color-foreground)" }}>
+              <Button variant="link" className="text-2xl">About</Button>
             </a>
-            <a href="/blog" className="px-3 py-2 rounded" style={{ color: "var(--color-foreground)" }}>
-              <Button variant="link">Blog</Button>
+            <a href="/blog" className="py-2" style={{ color: "var(--color-foreground)" }}>
+              <Button variant="link" className="text-2xl">Blog</Button>
             </a>
           </div>
 
           <SheetFooter>
             <SheetClose asChild>
-              <Button variant="outline">Close</Button>
+              <Button variant="destructive">Close</Button>
             </SheetClose>
           </SheetFooter>
         </SheetContent>
