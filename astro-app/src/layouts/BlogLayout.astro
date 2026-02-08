@@ -3,11 +3,18 @@ import { Badge } from "@/components/ui/badge";
 import MainLayout from "./main.astro"
 const { frontmatter } = Astro.props;
 ---
+<style>
+    .converted h2{
+    color: var(--accent-foreground);
+    }
+</style>
 <MainLayout title={frontmatter.title}>
     <section class="py-4 sm:py-2 mt-14">
         <h1 class="text-4xl sm:text-8xl font-bold text-accent mb-4">{frontmatter.title}</h1>
         <h2 class="text-2xl sm:text-4xl text-muted-foreground mb-4">{frontmatter.summary}</h2>
     </section>
     <div class="flex gap-1 mb-4">{frontmatter.tags.map((e:any) => <Badge variant="secondary" className="text-1xl">{e}</Badge>)}</div>
-    <slot />
+    <div class="converted">
+        <slot />
+    </div>
 </MainLayout>
