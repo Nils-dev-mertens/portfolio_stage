@@ -1,6 +1,6 @@
 ---
 layout: "../../../layouts/BlogLayout.astro"
-title: "Week 3 - Start ai chapter"
+title: "Week 3 - NOT feeling new anymore"
 date: "21-01-2026"
 summary: "Logging refactor, dashboard bugs en AI-assisted UI"
 tags: [development, collaboration]

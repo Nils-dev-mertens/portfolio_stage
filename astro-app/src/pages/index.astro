@@ -12,6 +12,7 @@ import {
 import { Badge } from "../components/ui/badge";
 
 const posts = await Astro.glob("./blog/posts/*.md");
+const post = posts[posts.length - 1]
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
@@ -97,28 +98,26 @@ const posts = await Astro.glob("./blog/posts/*.md");
 
         <div class="section container mt-8">
             <h3 class="text-accent-foreground text-3xl mb-4">
-                Recente berichten
+                laatste post
             </h3>
 
             <div class="">
-                {
-                    posts.slice(0, 3).map((p) => (
-                        <Card key={p.url} className="mb-4">
+
+                        <Card key={post.url} className="mb-4">
                             <CardHeader>
                                 <CardTitle className="text-accent">
-                                    <a href={`${p.url}/`} class="hover:underline">
-                                        {p.frontmatter.title}
+                                    <a href={`${post.url}/`} class="hover:underline">
+                                        {post.frontmatter.title}
                                     </a>
                                 </CardTitle>
                                 <CardDescription>
-                                    {p.frontmatter.date}
+                                    {post.frontmatter.date}
                                 </CardDescription>
-                                <div class="flex gap-1">{p.frontmatter.tags.map((e:any) => <Badge variant="secondary">{e}</Badge>)}</div>
+                                <div class="flex gap-1">{post.frontmatter.tags.map((e:any) => <Badge variant="secondary">{e}</Badge>)}</div>
                             </CardHeader>
-                            <CardContent>{p.frontmatter.summary}</CardContent>
+                            <CardContent>{post.frontmatter.summary}</CardContent>
                         </Card>
-                    ))
-                }
+
             </div>
         </div>
     </div></MainLayout
