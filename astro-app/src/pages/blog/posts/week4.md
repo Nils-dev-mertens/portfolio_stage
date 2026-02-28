@@ -2,7 +2,7 @@
 layout: "../../../layouts/BlogLayout.astro"
 title: "Week 4 - Start ai chapter"
 date: "28-01-2026"
-summary: ""
+summary: "Aanpassen van werkstructure, maar ai gebruiken en het automatiseren van taken"
 tags: [development, collaboration]
 ---
 ![alt text](./images/monthsequals2sprints.png)
