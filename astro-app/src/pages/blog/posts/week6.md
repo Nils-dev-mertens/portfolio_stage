@@ -1,7 +1,7 @@
 ---
 layout: "../../../layouts/BlogLayout.astro"
 title: "Week 6 - ATS afronding en snellere builds"
-date: "07-02-2026"
+date: "14-02-2026"
 summary: "ATS-integratie afgerond; serverconfig en endpoints op orde. Lokale devflow met Azure CLI en Docker cache (Maven) reduceert buildtijd van ~10 min naar <3 min; alles gedocumenteerd."
 tags: [devops, ats, performance, documentation]
 ---
