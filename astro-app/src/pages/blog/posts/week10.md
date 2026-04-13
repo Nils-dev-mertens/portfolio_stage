@@ -3,7 +3,7 @@ layout: "../../../layouts/BlogLayout.astro"
 title: "Week 10 - Sprint Planning, UI Components en CV-agent"
 date: "12-04-2026"
 summary: "Eindelijk een volwaardige sprint gepland met duidelijke takenverdeling. UI component pipeline afgerond. Gesprek met CEO over AI-gebruik en eerste opzet van een CV-beoordelingsagent."
-tags: [sprint, ui-components, npm-package, azure-pipelines, ai-agents, word-plugin, cv-assistant]
+tags: [sprint, azure-pipelines, word-plugin]
 ---
 
 ![alt text](./images/backlogitemsscrum.png)

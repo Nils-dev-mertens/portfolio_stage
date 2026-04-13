@@ -3,7 +3,7 @@ layout: "../../../layouts/BlogLayout.astro"
 title: "Week 9 - UI Package, Astro Conversie en Playwright"
 date: "04-04-2026"
 summary: "Voor het eerst een npm UI-package gebouwd en geïntegreerd. Verantwoordelijkheid voor de Astro-conversie van een Framer-website. Playwright-teststrategie uitgedacht voor CI/CD."
-tags: [astro, npm-package, playwright, ui, ci-cd, flowlane]
+tags: [astro, npm-package, playwright, flowlane]
 ---
 
 ![alt text](./images/fullstackdevexperience.png)

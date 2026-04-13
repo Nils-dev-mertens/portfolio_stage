@@ -3,7 +3,7 @@ layout: "../../../layouts/BlogLayout.astro"
 title: "Week 8 - Python, AI Automatisering en Aikido Documentatie"
 date: "28-02-2026"
 summary: "Aikido volledig werkend en gedocumenteerd. Voor het eerst Python geschreven. AI-routines opgezet voor automatische planning en antwoorden. Bug opgelost in frontend en bijgewoond event 'The Future'."
-tags: [python, aikido, automatisering, ai-agents, events]
+tags: [python, aikido, events]
 ---
 ![alt text](./images/firsttimeusingpython.png)
 

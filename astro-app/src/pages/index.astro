@@ -11,8 +11,14 @@ import {
 } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
 
-const posts = await Astro.glob("./blog/posts/*.md");
-const post = posts[posts.length - 1]
+interface MarkdownPost {
+    url: string;
+    frontmatter: { title: string; date: string; tags: string[]; summary: string };
+}
+const postModules = import.meta.glob<MarkdownPost>("./blog/posts/*.md", { eager: true });
+const getWeekNum = (path: string) => parseInt(path.match(/week(\d+)/i)?.[1] ?? "0");
+const posts = Object.entries(postModules).sort(([a], [b]) => getWeekNum(a) - getWeekNum(b));
+const post = posts[posts.length - 1]?.[1];
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
@@ -103,7 +109,7 @@ const post = posts[posts.length - 1]
 
             <div class="">
 
-                        <Card key={post.url} className="mb-4">
+                        <Card key={post.url} className="mb-4 w-full">
                             <CardHeader>
                                 <CardTitle className="text-accent">
                                     <a href={`${post.url}/`} class="hover:underline">
