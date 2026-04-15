@@ -10,7 +10,7 @@ interface MarkdownPost {
 }
 const getWeekNum = (path: string) => parseInt(path.match(/week(\d+)/i)?.[1] ?? "0");
 const postModules = import.meta.glob<MarkdownPost>('./blog/posts/*.md', { eager: true });
-const posts = Object.entries(postModules).sort(([a], [b]) => getWeekNum(a) - getWeekNum(b)).map(([, p]) => p);
+const posts = Object.entries(postModules).sort(([a], [b]) => getWeekNum(b) - getWeekNum(a)).map(([, p]) => p);
 ---
 
 <MainLayout title="Blog">
