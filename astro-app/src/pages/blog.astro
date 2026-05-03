@@ -38,7 +38,7 @@ const posts = Object.entries(postModules).sort(([a], [b]) => getWeekNum(b) - get
                                 <CardDescription>
                                     {p.frontmatter.date}
                                 </CardDescription>
-                                <div class="flex gap-1">
+                                <div class="flex gap-1 flex-wrap max-h-14 overflow-hidden">
                                     {p.frontmatter.tags.map((e:any) => <Badge variant="secondary">{e}</Badge>)}
                                 </div>
                             </CardHeader>
