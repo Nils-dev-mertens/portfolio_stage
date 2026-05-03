@@ -6,7 +6,7 @@ summary: "Incident.io live als statuspage, verder gewerkt aan de CV engine voor 
 tags: [incident-io, monitoring, testing, dto, cv-engine, ddd, claude, saply]
 ---
 
-![alt text](./images/image.png)
+![alt text](./images/just1bigfile.png)
 
 ## Context:
 
