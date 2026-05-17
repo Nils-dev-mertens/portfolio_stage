@@ -3,7 +3,7 @@ layout: "../../../layouts/BlogLayout.astro"
 title: "Week 13 - Incident.io integratie, CV engine feedbackmodule en DDD-frustratie"
 date: "04-05-2026"
 summary: "Incident.io live als statuspage, verder gewerkt aan de CV engine voor de feedbackmodule, en een eerlijke realisatie: DDD is niks voor mij en Claude inzetten als dagelijkse werktool is gewoon slim."
-tags: [incident-io, monitoring, testing, dto, cv-engine, ddd, claude, saply]
+tags: [incident-io, cv-engine, ddd, testing]
 ---
 
 ![alt text](./images/just1bigfile.png)

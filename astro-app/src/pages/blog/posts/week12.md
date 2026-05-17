@@ -3,7 +3,7 @@ layout: "../../../layouts/BlogLayout.astro"
 title: "Week 12 - Word plugin live, eerste klantmail en ISO-discussie"
 date: "25-04-2026"
 summary: "De Word plugin is woensdag afgerond en donderdag succesvol gedeployed — op tijd en zonder problemen. Daarnaast mijn eerste mail naar een klant gestuurd, een stevig standpunt ingenomen over de ISO pc-discussie en eindelijk Claude remote werkend gekregen."
-tags: [word-plugin, deployment, testing, claude, iso]
+tags: [word-plugin, deployment, testing, iso]
 ---
 
 ![alt text](./images/uichangessimply.png)

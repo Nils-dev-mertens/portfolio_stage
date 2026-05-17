@@ -3,7 +3,7 @@ layout: "../../../layouts/BlogLayout.astro"
 title: "Week 14 - Template doorgegeven, CV engine verder en testing platform"
 date: "11-05-2026"
 summary: "Gewerkt aan een template dat aan Manu is doorgegeven, CV engine verder uitgebouwd voor de statuspage en feedbackmodule, Intercom opgestart voor Word plugin integratie, en een eerlijke reflectie over vibe coden versus code écht begrijpen."
-tags: [testing-platform, intercom, word-plugin, statuspage, feedback, ]
+tags: [testing-platform, intercom, word-plugin, statuspage]
 ---
 
 ![alt text](./images/nowvsthen.png)
